@@ -1,6 +1,6 @@
 package com.company;
 
-import static com.company.Game.tokens;
+import static com.company.Board.tokens;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class Player implements Runnable {
     String name;
+    int progresieMaxima=0;
     List<Integer> numere = new ArrayList<>();
 
     public void run() {
@@ -21,11 +22,11 @@ public class Player implements Runnable {
                 numere.add(ales);
             }
         }
+        progresieMaxim();
     }
 
-    public int progresieMaxima() {
+    public void progresieMaxim() {
         int pasCurent = 0;
-        int progresieMaxima = 0;
         int numarCurent = 0;
         int nrElementeProgresie = 0;
         boolean inProgresie;
@@ -46,6 +47,5 @@ public class Player implements Runnable {
                 }
             }
         }
-        return progresieMaxima;
     }
 }
